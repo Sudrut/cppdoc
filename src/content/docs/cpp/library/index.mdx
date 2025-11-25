@@ -6,10 +6,8 @@ order: 1
 import { Card } from "@astrojs/starlight/components";
 
 import Behavior from "@components/Behavior.astro";
-import NoGap from "@components/NoGap.astro";
-import DR from "@components/DR.astro";
-import {
-  default as FeatureTestMacro,
+import DRList, { DR } from "@components/DRList.astro";
+import FeatureTestMacro, {
   FeatureTestMacroValue,
 } from "@components/FeatureTestMacro.astro";
 import FlexTable from "@components/FlexTable.astro";
@@ -647,7 +645,7 @@ The exception specification for a non-virtual function can be strengthened by ad
 
 The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
 
-<NoGap>
+<DRList>
   <DR kind="lwg" id={1} std="C++98">
     <Fragment slot="behavior-published">
       the language linkages of the names from the C standard library were unspecified
@@ -746,4 +744,4 @@ The following behavior-changing defect reports were applied retroactively to pre
       <Behavior kind="ifndr">no diagnostic is required</Behavior> in this case
     </Fragment>
   </DR>
-</NoGap>
+</DRList>
