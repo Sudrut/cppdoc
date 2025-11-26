@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import starlightAutoSidebar from "starlight-auto-sidebar";
 import starlightHeadingBadges from "starlight-heading-badges";
 
@@ -34,7 +35,15 @@ export default defineConfig({
           autogenerate: { directory: "c/library" },
         },
       ],
-      plugins: [starlightAutoSidebar(), starlightHeadingBadges()],
+      plugins: [
+        starlightAutoSidebar(),
+        starlightHeadingBadges(),
+        starlightUtils({
+          multiSidebar: {
+            switcherStyle: "dropdown",
+          },
+        }),
+      ],
       customCss: ["./src/styles/custom.css"],
     }),
   ],
