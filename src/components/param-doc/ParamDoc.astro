@@ -6,13 +6,11 @@ interface Props {
 const { name } = Astro.props;
 ---
 
-<Fragment>
-  <div class="param-doc-cell"><code>{name}</code></div>
-  <div class="param-doc-cell">-</div>
-  <div class="param-doc-cell">
-    <slot />
-  </div>
-</Fragment>
+<div class="param-doc-cell"><code>{name}</code></div>
+<div class="param-doc-cell">-</div>
+<div class="param-doc-cell">
+  <slot />
+</div>
 
 <style>
   .param-doc-cell {

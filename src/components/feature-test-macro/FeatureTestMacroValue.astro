@@ -9,11 +9,9 @@ interface Props {
 const { value, since } = Astro.props;
 ---
 
-<>
-  <td>{value}</td>
-  <td class="ftm-since-cell">{since}</td>
-  <td><slot /></td>
-</>
+<td>{value}</td>
+<td class="ftm-since-cell">{since}</td>
+<td><slot /></td>
 
 <style>
   .ftm-since-cell {

@@ -13,7 +13,7 @@ const autoCollapseMaxHeight = maxHeight + "px";
   <div class="content">
     <slot />
   </div>
-  <button class="expand-button">
+  <button class="expand-button hidden">
     Expand
     <Icon class="expand-icon" name="down-caret" size="1em" />
   </button>
@@ -33,17 +33,16 @@ const autoCollapseMaxHeight = maxHeight + "px";
         (wrapper as HTMLElement).dataset.maxHeight || "200",
         10
       );
-      if (contentElement.scrollHeight <= maxHeight) {
-        button.style.display = "none";
+      if (contentElement.scrollHeight <= maxHeight)
         return;
-      }
 
       // The document content is longer than the maximum height, collapse it.
       contentElement.classList.add("collapsed");
+      button.classList.remove("hidden");
 
       button.addEventListener("click", () => {
         contentElement.classList.remove("collapsed");
-        button.style.display = "none";
+        button.classList.add("hidden");
       });
     });
   }
@@ -82,7 +81,11 @@ const autoCollapseMaxHeight = maxHeight + "px";
     font-size: 0.9rem;
   }
 
-  .auto-collapse .expand-button .expand-icon {
+  .auto-collapse > .expand-button.hidden {
+    display: none;
+  }
+
+  .auto-collapse > .expand-button > .expand-icon {
     display: inline;
     vertical-align: middle;
   }

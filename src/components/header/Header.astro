@@ -20,5 +20,14 @@ const asProps = nolink ? {} : { dest };
 ---
 
 <As {...asProps}>
-  <code>{text}</code>
+  <code class="cppdoc-header">{text}</code>
 </As>
+
+<style>
+  code.cppdoc-header {
+    background-color: revert;
+    font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+</style>

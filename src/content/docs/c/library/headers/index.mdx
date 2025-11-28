@@ -6,6 +6,7 @@ cppdoc:
 ---
 
 import { CHeader } from "@components/header";
+import { Desc, DescList } from "@components/desc";
 import {
   FeatureTestMacro,
   FeatureTestMacroValue,
@@ -15,127 +16,188 @@ import { Revision } from "@components/revision";
 
 The interface of C standard library is defined by the following collection of headers.
 
-<dl>
-  <dt><CHeader name="assert" /></dt>
-  <dd>Conditionally compiled macro that compares its argument to zero</dd>
+<DescList>
+  <Desc>
+    <CHeader slot="item" name="assert" />
+    Conditionally compiled macro that compares its argument to zero
+  </Desc>
+  
+  <Desc>
+    <Revision slot="item" noborder since="C99"><CHeader name="complex" /></Revision>
+    Conditionally compiled macro that compares its argument to zero
+  </Desc>
+  
+  <Desc>
+    <CHeader slot="item" name="ctype" />
+    Functions to determine the type contained in character data
+  </Desc>
+  
+  <Desc>
+    <CHeader slot="item" name="errno" />
+    Macros reporting error conditions
+  </Desc>
 
-  <dt><Revision noborder since="C99"><CHeader name="complex" /></Revision></dt>
-  <dd>Complex number arithmetic</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C99"><CHeader name="fenv" /></Revision>
+    Floating-point environment
+  </Desc>
 
-  <dt><CHeader name="ctype" /></dt>
-  <dd>Functions to determine the type contained in character data</dd>
+  <Desc>
+    <CHeader slot="item" name="float" />
+    Limits of floating-point types
+  </Desc>
 
-  <dt><CHeader name="errno" /></dt>
-  <dd>Macros reporting error conditions</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C99"><CHeader name="inttypes" /></Revision>
+    Format conversion of integer types
+  </Desc>
 
-  <dt><Revision noborder since="C99"><CHeader name="fenv" /></Revision></dt>
-  <dd>Floating-point environment</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C95"><CHeader name="iso646" /></Revision>
+    Alternative operator spellings
+  </Desc>
 
-  <dt><CHeader name="float" /></dt>
-  <dd>Limits of floating-point types</dd>
+  <Desc>
+    <CHeader slot="item" name="limits" />
+    Ranges of integer types
+  </Desc>
 
-  <dt><Revision noborder since="C99"><CHeader name="inttypes" /></Revision></dt>
-  <dd>Format conversion of integer types</dd>
+  <Desc>
+    <CHeader slot="item" name="locale" />
+    Localization utilities
+  </Desc>
 
-  <dt><Revision noborder since="C95"><CHeader name="iso646" /></Revision></dt>
-  <dd>Alternative operator spellings</dd>
+  <Desc>
+    <CHeader slot="item" name="math" />
+    Common mathematical functions
+  </Desc>
 
-  <dt><CHeader name="limits" /></dt>
-  <dd>Ranges of integer types</dd>
+  <Desc>
+    <CHeader slot="item" name="setjmp" />
+    Nonlocal jumps
+  </Desc>
 
-  <dt><CHeader name="locale" /></dt>
-  <dd>Localization utilities</dd>
+  <Desc>
+    <CHeader slot="item" name="signal" />
+    Signal handling
+  </Desc>
 
-  <dt><CHeader name="math" /></dt>
-  <dd>Common mathematics functions</dd>
-
-  <dt><CHeader name="setjmp" /></dt>
-  <dd>Nonlocal jumps</dd>
-
-  <dt><CHeader name="signal" /></dt>
-  <dd>Signal handling</dd>
-
-  <dt>
+  <Desc>
     <Revision
+      slot="item"
       noborder
       since="C11"
       traits={[ { trait: "deprecated", since: "C23" } ]}
     >
       <CHeader name="signal" />
     </Revision>
-  </dt>
-  <dd>alignas and alignof convenience macros</dd>
+    <Missing>alignas</Missing> and <Missing>alignof</Missing> convenience macros
+  </Desc>
 
-  <dt><CHeader name="stdarg" /></dt>
-  <dd>Variable arguments</dd>
+  <Desc>
+    <CHeader slot="item" name="stdarg" />
+    Variable arguments
+  </Desc>
 
-  <dt><Revision noborder since="C11"><CHeader name="stdatomic" /></Revision></dt>
-  <dd>Atomic operations</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C11"><CHeader name="stdatomic" /></Revision>
+    Atomic operations
+  </Desc>
 
-  <dt><Revision noborder since="C23"><CHeader name="stdbit" /></Revision></dt>
-  <dd>Macros to work with the byte and bit representations of types</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C23"><CHeader name="stdbit" /></Revision>
+    Macros to work with the byte and bit representations of types
+  </Desc>
 
-  <dt>
+  <Desc>
     <Revision
+      slot="item"
       noborder
       since="C99"
       traits={[ { trait: "deprecated", since: "C23" } ]}
     >
       <CHeader name="stdbool" />
     </Revision>
-  </dt>
-  <dd>Macros for boolean type</dd>
+    Macros for boolean type
+  </Desc>
 
-  <dt><Revision noborder since="C23"><CHeader name="stdckdint" /></Revision></dt>
-  <dd>Macros for performing checked integer arithmetic</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C23"><CHeader name="stdckdint" /></Revision>
+    Macros for performing checked integer arithmetic
+  </Desc>
 
-  <dt><CHeader name="stddef" /></dt>
-  <dd>Common macro definitions</dd>
+  <Desc>
+    <CHeader slot="item" name="stddef" />
+    Common macro definitions
+  </Desc>
 
-  <dt><Revision noborder since="C99"><CHeader name="stdint" /></Revision></dt>
-  <dd>Fixed-width integer types</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C99"><CHeader name="stdint" /></Revision>
+    Fixed-width integer types
+  </Desc>
 
-  <dt><CHeader name="stdio" /></dt>
-  <dd>Input/output</dd>
+  <Desc>
+    <CHeader slot="item" name="stdio" />
+    Input/output
+  </Desc>
 
-  <dt><CHeader name="stdlib" /></dt>
-  <dd>General utilities: <Missing>memory management</Missing>, <Missing>program utilities</Missing>, <Missing>string conversions</Missing>, <Missing>random numbers</Missing>, <Missing>algorithms</Missing></dd>
+  <Desc>
+    <CHeader slot="item" name="stdlib" />
+    General utilities: <Missing>memory management</Missing>, <Missing>program utilities</Missing>, <Missing>string conversions</Missing>, <Missing>random numbers</Missing>, <Missing>algorithms</Missing>
+  </Desc>
 
-  <dt><Revision noborder since="C29"><CHeader name="stdmchar" /></Revision></dt>
-  <dd>Text transcode</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C29"><CHeader name="stdmchar" /></Revision>
+    Text transcode
+  </Desc>
 
-  <dt>
+  <Desc>
     <Revision
+      slot="item"
       noborder
       since="C11"
       traits={[ { trait: "deprecated", since: "C23" } ]}
     >
       <CHeader name="stdnoreturn" />
     </Revision>
-  </dt>
-  <dd><Missing>noreturn</Missing> convenience macro</dd>
+    <Missing>noreturn</Missing> convenience macro
+  </Desc>
 
-  <dt><CHeader name="string" /></dt>
-  <dd>String handling</dd>
+  <Desc>
+    <CHeader slot="item" name="string" />
+    String handling
+  </Desc>
 
-  <dt><Revision noborder since="C99"><CHeader name="tgmath" /></Revision></dt>
-  <dd>Type-generic math (macros wrapping <CHeader name="math" /> and <CHeader name="complex" />)</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C99"><CHeader name="tgmath" /></Revision>
+    Type-generic math (macros wrapping <CHeader name="math" /> and <CHeader name="complex" />)
+  </Desc>
 
-  <dt><Revision noborder since="C11"><CHeader name="threads" /></Revision></dt>
-  <dd>Thread library</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C11"><CHeader name="threads" /></Revision>
+    Thread library
+  </Desc>
 
-  <dt><CHeader name="time" /></dt>
-  <dd>Time/date utilities</dd>
+  <Desc>
+    <CHeader slot="item" name="time" />
+    Time/date utilities
+  </Desc>
 
-  <dt><Revision noborder since="C11"><CHeader name="uchar" /></Revision></dt>
-  <dd>UTF-16 and UTF-32 character utilities</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C11"><CHeader name="uchar" /></Revision>
+    UTF-16 and UTF-32 character utilities
+  </Desc>
 
-  <dt><Revision noborder since="C95"><CHeader name="wchar" /></Revision></dt>
-  <dd>Extended multibyte and wide character utilities</dd>
+  <Desc>
+    <Revision slot="item" noborder since="C95"><CHeader name="wchar" /></Revision>
+    Extended multibyte and wide character utilities
+  </Desc>
 
-  <dt><Revision noborder since="C95"><CHeader name="wctype" /></Revision></dt>
-  <dd>Functions to determine the type contained in wide character data</dd>
-</dl>
+  <Desc>
+    <Revision slot="item" noborder since="C95"><CHeader name="wctype" /></Revision>
+    Functions to determine the type contained in wide character data
+  </Desc>
+</DescList>
 
 ## Feature test macros :badge[C23]
 

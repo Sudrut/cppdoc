@@ -46,8 +46,7 @@ let KEY_INDEX: Map<string, string> | undefined = undefined;
  * @returns A map from keys to page slugs.
  */
 async function getOrBuildKeyIndex(): Promise<Map<string, string>> {
-  if (KEY_INDEX === undefined)
-    KEY_INDEX = await buildKeyIndex();
+  if (KEY_INDEX === undefined) KEY_INDEX = await buildKeyIndex();
   return KEY_INDEX;
 }
 
