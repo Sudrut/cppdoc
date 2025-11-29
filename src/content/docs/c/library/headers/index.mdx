@@ -12,7 +12,7 @@ import {
   FeatureTestMacroValue,
 } from "@components/feature-test-macro";
 import Missing from "@components/Missing.astro";
-import { Revision } from "@components/revision";
+import { Revision, RevisionBlock } from "@components/revision";
 
 The interface of C standard library is defined by the following collection of headers.
 
@@ -23,7 +23,9 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
   
   <Desc>
-    <Revision slot="item" noborder since="C99"><CHeader name="complex" /></Revision>
+    <RevisionBlock slot="item" noborder since="C99" dir="v">
+      <CHeader name="complex" />
+    </RevisionBlock>
     Conditionally compiled macro that compares its argument to zero
   </Desc>
   
@@ -38,7 +40,9 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C99"><CHeader name="fenv" /></Revision>
+    <RevisionBlock slot="item" noborder since="C99" dir="v">
+      <CHeader name="fenv" />
+    </RevisionBlock>
     Floating-point environment
   </Desc>
 
@@ -48,12 +52,16 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C99"><CHeader name="inttypes" /></Revision>
+    <RevisionBlock slot="item" noborder since="C99" dir="v">
+      <CHeader name="inttypes" />
+    </RevisionBlock>
     Format conversion of integer types
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C95"><CHeader name="iso646" /></Revision>
+    <RevisionBlock slot="item" noborder since="C95" dir="v">
+      <CHeader name="iso646" />
+    </RevisionBlock>
     Alternative operator spellings
   </Desc>
 
@@ -83,14 +91,15 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision
+    <RevisionBlock
       slot="item"
       noborder
       since="C11"
+      dir="v"
       traits={[ { trait: "deprecated", since: "C23" } ]}
     >
       <CHeader name="signal" />
-    </Revision>
+    </RevisionBlock>
     <Missing>alignas</Missing> and <Missing>alignof</Missing> convenience macros
   </Desc>
 
@@ -100,29 +109,36 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C11"><CHeader name="stdatomic" /></Revision>
+    <RevisionBlock slot="item" noborder since="C11" dir="v">
+      <CHeader name="stdatomic" />
+    </RevisionBlock>
     Atomic operations
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C23"><CHeader name="stdbit" /></Revision>
+    <RevisionBlock slot="item" noborder since="C23" dir="v">
+      <CHeader name="stdbit" />
+    </RevisionBlock>
     Macros to work with the byte and bit representations of types
   </Desc>
 
   <Desc>
-    <Revision
+    <RevisionBlock
       slot="item"
       noborder
       since="C99"
+      dir="v"
       traits={[ { trait: "deprecated", since: "C23" } ]}
     >
       <CHeader name="stdbool" />
-    </Revision>
+    </RevisionBlock>
     Macros for boolean type
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C23"><CHeader name="stdckdint" /></Revision>
+    <RevisionBlock slot="item" noborder since="C23" dir="v">
+      <CHeader name="stdckdint" />
+    </RevisionBlock>
     Macros for performing checked integer arithmetic
   </Desc>
 
@@ -132,7 +148,9 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C99"><CHeader name="stdint" /></Revision>
+    <RevisionBlock slot="item" noborder since="C99" dir="v">
+      <CHeader name="stdint" />
+    </RevisionBlock>
     Fixed-width integer types
   </Desc>
 
@@ -147,19 +165,22 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C29"><CHeader name="stdmchar" /></Revision>
+    <RevisionBlock slot="item" noborder since="C29" dir="v">
+      <CHeader name="stdmchar" />
+    </RevisionBlock>
     Text transcode
   </Desc>
 
   <Desc>
-    <Revision
+    <RevisionBlock
       slot="item"
       noborder
       since="C11"
+      dir="v"
       traits={[ { trait: "deprecated", since: "C23" } ]}
     >
       <CHeader name="stdnoreturn" />
-    </Revision>
+    </RevisionBlock>
     <Missing>noreturn</Missing> convenience macro
   </Desc>
 
@@ -169,12 +190,16 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C99"><CHeader name="tgmath" /></Revision>
+    <RevisionBlock slot="item" noborder since="C99" dir="v">
+      <CHeader name="tgmath" />
+    </RevisionBlock>
     Type-generic math (macros wrapping <CHeader name="math" /> and <CHeader name="complex" />)
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C11"><CHeader name="threads" /></Revision>
+    <RevisionBlock slot="item" noborder since="C11" dir="v">
+      <CHeader name="threads" />
+    </RevisionBlock>
     Thread library
   </Desc>
 
@@ -184,17 +209,23 @@ The interface of C standard library is defined by the following collection of he
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C11"><CHeader name="uchar" /></Revision>
+    <RevisionBlock slot="item" noborder since="C11" dir="v">
+      <CHeader name="uchar" />
+    </RevisionBlock>
     UTF-16 and UTF-32 character utilities
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C95"><CHeader name="wchar" /></Revision>
+    <RevisionBlock slot="item" noborder since="C95" dir="v">
+      <CHeader name="wchar" />
+    </RevisionBlock>
     Extended multibyte and wide character utilities
   </Desc>
 
   <Desc>
-    <Revision slot="item" noborder since="C95"><CHeader name="wctype" /></Revision>
+    <RevisionBlock slot="item" noborder since="C95" dir="v">
+      <CHeader name="wctype" />
+    </RevisionBlock>
     Functions to determine the type contained in wide character data
   </Desc>
 </DescList>
