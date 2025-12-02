@@ -86,11 +86,14 @@ async function main() {
   console.log("PR branches:", Array.from(prBranchNames));
 
   const migrateBranches = filterMigrateBranches(branches);
-  console.log("Migrate branches:", migrateBranches.map(b => b.name));
+  console.log(
+    "Migrate branches:",
+    migrateBranches.map((b) => b.name)
+  );
 
-  const toDelete = migrateBranches.filter(b => !prBranchNames.has(b.name));
+  const toDelete = migrateBranches.filter((b) => !prBranchNames.has(b.name));
   console.log(`Found ${toDelete.length} branches to delete:`);
-  toDelete.forEach(b => console.log(` - ${b.name}`));
+  toDelete.forEach((b) => console.log(` - ${b.name}`));
 
   if (toDelete.length === 0) {
     console.log("No branches to delete.");
