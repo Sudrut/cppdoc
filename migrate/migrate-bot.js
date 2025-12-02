@@ -64,6 +64,8 @@ async function convertToMDX(html, title, url) {
     ),
   );
 
+  console.log("Prompt:", prompt);
+
   const response = await fetch(
     "https://openrouter.ai/api/v1/chat/completions",
     {
@@ -100,6 +102,8 @@ ${html}
 
   const data = await response.json();
   let content = data.choices[0].message.content.trim();
+
+  console.log("Raw content:", content);
 
   if (content.includes("```mdx")) {
     content = content.slice(content.indexOf("```mdx") + 6, content.lastIndexOf("```")).trim();
