@@ -255,6 +255,7 @@ description: Auto‑generated from cppreference
 async function uploadImageToImgBB(imageBuffer: Buffer): Promise<string> {
   const formData = new FormData();
   formData.append("image", new Blob([new Uint8Array(imageBuffer)]), "diff.svg");
+  formData.append("name", "diff.svg");
 
   const response = await fetch(
     `https://api.imgbb.com/1/upload?expiration=600&key=${IMGBB_API_KEY}`,
