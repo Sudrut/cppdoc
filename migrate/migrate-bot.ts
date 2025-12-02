@@ -69,7 +69,7 @@ async function fetchPageContent(
   const html = await response.text();
   const dom = new JSDOM(html);
   const contentElement = dom.window.document.querySelector("#mw-content-text");
-  contentElement?.querySelector('.t-navbar')?.remove();
+  contentElement?.querySelector(".t-navbar")?.remove();
   const headingElement = dom.window.document.querySelector("#firstHeading");
   if (!contentElement) {
     throw new Error("Could not find #mw-content-text");
