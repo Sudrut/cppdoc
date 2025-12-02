@@ -258,7 +258,7 @@ async function uploadImageToImgBB(imageBuffer: Buffer): Promise<string> {
   formData.append("name", "diff.svg");
 
   const response = await fetch(
-    `https://api.imgbb.com/1/upload?expiration=600&key=${IMGBB_API_KEY}`,
+    `https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}&name=diff.svg`,
     {
       method: "POST",
       body: formData,
