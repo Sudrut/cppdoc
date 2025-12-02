@@ -201,7 +201,7 @@ import { RevisionBlock } from "@components/revision";
   </Desc>
 
   <Desc autorevSince="C99">
-    <RevisionBlock slot="item" noborder since="C99" dir="v">
+    <RevisionBlock slot="item" noborder since="C99" vertical>
       <CHeader name="complex" />
     </RevisionBlock>
     Complex number arithmetic
@@ -222,7 +222,7 @@ import { RevisionBlock } from "@components/revision";
     </Desc>
 
     <Desc autorevSince="C99">
-      <RevisionBlock slot="item" noborder since="C99" dir="v">
+      <RevisionBlock slot="item" noborder since="C99" vertical>
         <CHeader name="complex" />
       </RevisionBlock>
       Complex number arithmetic
@@ -236,7 +236,7 @@ import { RevisionBlock } from "@components/revision";
 </Card>
 
 <Aside type="tip">
-  We strongly recommend you to specify the `dir="v"` attribute on the `RevisionBlock` component inside a `Decl`. This would render to a more mobile-friendly output.
+  We strongly recommend you to specify the `vertical` attribute on the `RevisionBlock` component inside a `Decl`. This would render to a more mobile-friendly output.
 </Aside>
 
 <Aside type="tip">
@@ -290,18 +290,24 @@ cppdoc:
   While a page can have multiple doc keys, each unique doc key can only be associated to at most one page.
 </Aside>
 
-The `DocLink` component allows you to render an inline link to the page associated with the specified doc key.
+The `DocLink` component allows you to render an inline link to the page associated with the specified doc key. You can also specify the destination page by its absolute path.
 
 ```mdx
 import DocLink from "@components/DocLink.astro";
 
 Check out
-<DocLink key="cpp.library.utilities.move">this page</DocLink>
+<DocLink src="cpp.library.utilities.move">this page</DocLink>
+for more information about `std::move`.
+
+Check out
+<DocLink src="/cpp/library/utilities/move">this page</DocLink>
 for more information about `std::move`.
 ```
 
 <Card title="Preview">
-  Check out <DocLink key="cpp.library.utilities.move">this page</DocLink> for detailed information about `std::move`.
+  Check out <DocLink src="cpp.library.utilities.move">this page</DocLink> for detailed information about `std::move`.
+
+  Check out <DocLink src="/cpp/library/utilities/move">this page</DocLink> for more information about `std::move`.
 </Card>
 
 <Aside type="tip">
