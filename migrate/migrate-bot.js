@@ -109,6 +109,42 @@ ${html}
     content = content.slice(content.indexOf("```mdx") + 6, content.lastIndexOf("```")).trim();
   }
 
+  // Auto Import
+  const components = [
+    'Behavior',
+    'Decl',
+    'DeclDoc',
+    'DescList',
+    'Desc',
+    'ParamDocList',
+    'ParamDoc',
+    'DocLink',
+    'CHeader',
+    'CppHeader',
+    'FeatureTestMacro',
+    'FeatureTestMacroValue',
+    'DR',
+    'DRList',
+    'Revision',
+    'RevisionBlock',
+    'AutoCollapse',
+    'FlexTable',
+    'WG21PaperLink',
+  ]
+
+  const usedComponents = components.filter((comp) => content.includes(`<${comp} `) || content.includes(`<${comp}>`));
+  
+  // Remove all existing import statements
+  content = content.split('\n').filter(line => !line.startsWith('import ')).join('\n');
+
+  // Sort used components alphabetically
+  usedComponents.sort();
+
+  if (usedComponents.length > 0) {
+    const importStatements = `import { ${usedComponents.join(', ')} } from '@/components/index.ts';\n\n`;
+    content = importStatements + content;
+  }
+
   return content;
 }
 
