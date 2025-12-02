@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "migrate": "tsx ./migrate/migrate-bot.ts"
+    "migrate": "tsx ./migrate/migrate-bot.ts",
+    "cleanup-branches": "tsx ./migrate/cleanup-branches.ts"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.36.2",
