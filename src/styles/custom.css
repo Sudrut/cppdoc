@@ -1,0 +1,63 @@
+:root[data-theme="light"] {
+  --sl-color-green: hsl(var(--sl-hue-green) 50% 40%);
+}
+
+:root {
+  --cppdoc-color-revision: var(--sl-color-green);
+  --cppdoc-font-size-revision: 0.8em;
+
+  --cppdoc-color-desc-kind: var(--sl-color-green);
+  --cppdoc-font-size-desc-kind: 0.8em;
+
+  --cppdoc-color-missing-link: #cc6633;
+  --cppdoc-color-well-def: var(--sl-color-green);
+  --cppdoc-color-impl-def: var(--sl-color-blue);
+  --cppdoc-color-unspec: var(--sl-color-orange);
+  --cppdoc-color-undef: var(--sl-color-red);
+  --cppdoc-color-ill-formed: var(--sl-color-red);
+  --cppdoc-color-ifndr: var(--sl-color-red);
+
+  --sl-sidebar-width: 22rem;
+}
+
+.sl-markdown-content code {
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+
+.sl-markdown-content pre > code {
+  font-size: 1em;
+}
+
+/* Custom scrollbar */
+:root[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+:root[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+:root[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
